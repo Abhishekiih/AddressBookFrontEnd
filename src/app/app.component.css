@@ -1,0 +1,13 @@
+.container {
+  width: 60%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+.title {
+  text-align: center;
+  font-size: 2.5rem;  /* Adjust size as needed */
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;  /* Optional: Change color */
+  text-decoration: underline; /* Adds an underline */
+}

@@ -1,0 +1,13 @@
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.input-group-text {
+  background-color: #007bff;
+  color: white;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
