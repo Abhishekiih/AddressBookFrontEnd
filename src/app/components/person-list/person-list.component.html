@@ -1,35 +1,37 @@
-<div class="container mt-4">
-    <div class="card shadow-lg p-3 rounded">
-        <h4 class="text-center mb-3">📖 Address Book</h4>
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover text-center align-middle">
-                <thead class="table-primary">
-                    <tr>
-                        <th>Full Name</th>
-                        <th>Phone Number</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip Code</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let person of persons">
-                        <td class="fw-bold">{{ person.fullName }}</td>
-                        <td>{{ person.phoneNumber }}</td>
-                        <td>{{ person.address }}</td>
-                        <td>{{ person.city }}</td>
-                        <td>{{ person.state }}</td>
-                        <td>{{ person.zipCode }}</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm px-3" (click)="deletePerson(person.id)">
-                                <i class="fas fa-trash-alt"></i> Delete
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+<div class="contacts-container">
+    <div class="contacts-header">
+      <h2>Person Details</h2>
+      <!-- <button class="add-person-btn" (click)="openAddPersonModal()">+ Add Person</button> -->
     </div>
-</div>
+  
+    <div class="contacts-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Fullname</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of personService.persons$ | async">
+            <td>{{ person.fullName }}</td>
+            <td>{{ person.address }}</td>
+            <td>{{ person.city }}</td>
+            <td>{{ person.state }}</td>
+            <td>{{ person.zipCode }}</td>
+            <td>{{ person.phoneNumber }}</td>
+            <td class="actions-cell">
+              <button class="edit-btn"><i class="fas fa-edit"></i></button>
+              <button class="delete-btn" (click)="deletePerson(person.id)"><i class="fas fa-trash-alt"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
